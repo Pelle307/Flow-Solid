@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * @author pellecarlsen
  */
 public class SolidFlow {
+    
+    String Herpiderp;
     /**
      * @param args the command line arguments
      */
