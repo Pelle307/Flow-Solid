@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package solid.flow;
+package WordPair;
 
 
 /**
@@ -22,13 +22,13 @@ package solid.flow;
  * Added code to make this test run on a unix like filesystem
  */
 
-//import Entity.Engine;
-//import Interface.WordPairControlInterface;
-//import java.util.UUID;
-//import org.junit.After;
-//import org.junit.Before;
-//import org.junit.Test;
-//import static org.junit.Assert.*;
+import Interface.WordPairControlInterface;
+import java.util.UUID;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import solid.flow.WordPairControlInterface;
 
 /**
  *
