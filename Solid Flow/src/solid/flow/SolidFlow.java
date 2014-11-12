@@ -17,6 +17,7 @@ public class SolidFlow {
     String Herp;
     String Dumdum;
     String wam;
+    int in;
     /**
      * @param args the command line arguments
      */
