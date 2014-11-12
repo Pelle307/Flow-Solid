@@ -14,6 +14,9 @@ import java.util.ArrayList;
 public class SolidFlow {
     
     String Herpiderp;
+    String Herp;
+    String Dumdum;
+    String wam;
     /**
      * @param args the command line arguments
      */
