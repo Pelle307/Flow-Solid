@@ -18,6 +18,7 @@ public class SolidFlow {
     String Dumdum;
     String wam;
     int in;
+    int y;
     /**
      * @param args the command line arguments
      */
