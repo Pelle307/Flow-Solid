@@ -30,8 +30,8 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1Translator = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldDanish = new javax.swing.JTextField();
+        jTextFieldEnglish = new javax.swing.JTextField();
         jButton1Next = new javax.swing.JButton();
         jButton2Guess = new javax.swing.JButton();
         jButton3LookUp = new javax.swing.JButton();
@@ -43,9 +43,9 @@ public class GUI extends javax.swing.JFrame {
         jLabel1Translator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1Translator.setText("Translator");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldDanish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextFieldDanishActionPerformed(evt);
             }
         });
 
@@ -80,8 +80,8 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton4New)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                            .addComponent(jTextField2))))
+                            .addComponent(jTextFieldDanish, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                            .addComponent(jTextFieldEnglish))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3LookUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -100,12 +100,12 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jLabel1Translator)
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDanish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1Next, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2Guess)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldEnglish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3LookUp)
@@ -118,17 +118,22 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextFieldDanishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDanishActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextFieldDanishActionPerformed
 
     private void jButton4NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4NewActionPerformed
         // TODO add your handling code here:
-        
+        String danish;
+        String english;
+        danish = jTextFieldDanish.getText();
+        english = jTextFieldEnglish.getText();
         //tests.>>>>>>>>>>>>>>>>>>>>>>>HERE
-        run.add("ko","cow");
+        run.add(danish,english);
         int size = run.size();
         System.out.println(size);
+        jTextFieldDanish.setText("");
+        jTextFieldEnglish.setText("");
         //>>>>>>>>>>>>>>>>>>>>>>>>> TEST ENDS!
     }//GEN-LAST:event_jButton4NewActionPerformed
 
@@ -181,7 +186,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton4New;
     private javax.swing.JLabel jLabel1Translator;
     private javax.swing.JLabel jLabel2Correct;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextFieldDanish;
+    private javax.swing.JTextField jTextFieldEnglish;
     // End of variables declaration//GEN-END:variables
 }
