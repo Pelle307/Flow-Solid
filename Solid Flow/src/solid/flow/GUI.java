@@ -50,6 +50,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jButton1Next.setText("Next");
+        jButton1Next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1NextActionPerformed(evt);
+            }
+        });
 
         jButton2Guess.setText("Guess");
 
@@ -126,6 +131,13 @@ public class GUI extends javax.swing.JFrame {
         System.out.println(size);
         //>>>>>>>>>>>>>>>>>>>>>>>>> TEST ENDS!
     }//GEN-LAST:event_jButton4NewActionPerformed
+
+    private void jButton1NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1NextActionPerformed
+        // TODO add your handling code here:
+        //testing save method.
+        run.save("Word.txt");
+        //works.
+    }//GEN-LAST:event_jButton1NextActionPerformed
 
     /**
      * @param args the command line arguments
