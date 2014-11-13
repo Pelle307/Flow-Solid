@@ -28,6 +28,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import solid.flow.ControlEngine;
 import solid.flow.WordPairControlInterface;
 
 /**
@@ -73,7 +74,7 @@ public class WordPair_Test_v3
     public void setUp()
     {
         //REPLACE WordPairDemoV1    WITH YOUR OWN CLASS THAT IMPLEMENTS THE INTERFACE
-        wordPairDemo = USE_YOUR_OWN_CONTROLLER_HERE(); // !!!!! REPLACE HERE !!!!!
+        wordPairDemo = new ControlEngine(); // !!!!! REPLACE HERE !!!!!
         assertTrue(wordPairDemo.size() == 0);
         wordPairDemo.add("hest", "horse");      //We trust the add() method here!
         wordPairDemo.add("hus", "house");
