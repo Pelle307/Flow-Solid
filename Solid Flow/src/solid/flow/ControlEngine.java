@@ -4,55 +4,11 @@
  * and open the template in the editor.
  */
 package solid.flow;
-import java.util.ArrayList;
+
 /**
  *
  * @author pellecarlsen
  */
-public class ControlEngine implements WordPairControlInterface{
-    ArrayList<Word> word;
-    
-    public ControlEngine(){
-        word = new ArrayList<Word>();
-    }
-    @Override
-    public void add(String question, String answer) {
-        Word w = new Word(question,answer);
-        word.add(w);
-    }
+public class ControlEngine {
 
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public String getRandomQuestion() {
-        return null;
-    }
-
-    @Override
-    public boolean checkGuess(String question, String quess) {
-        return false;
-    }
-
-    @Override
-    public String lookup(String question) {
-        return null;
-    }
-
-    @Override
-    public boolean load(String filename) {
-        return true;
-    }
-
-    @Override
-    public boolean save(String filename) {
-        return true;
-    }
-
-    @Override
-    public void clear() {
-    }
-    
 }
