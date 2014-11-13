@@ -41,7 +41,15 @@ public class SolidFlow implements WordPairControlInterface {
 
     @Override
     public boolean checkGuess(String question, String quess) {
-        return false;
+        Boolean check = false;
+        for (int i = 0; i < word.size(); i++) {
+            if (question.equals(word.get(i).getQuestion())) {
+                if (quess.equals(word.get(i).getEnglishWord())) {
+                    check = true;
+                }
+            }
+        }
+        return check;
     }
 
     @Override

@@ -57,6 +57,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jButton2Guess.setText("Guess");
+        jButton2Guess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2GuessActionPerformed(evt);
+            }
+        });
 
         jButton3LookUp.setText("Look Up");
 
@@ -143,6 +148,17 @@ public class GUI extends javax.swing.JFrame {
         run.save("Word.txt");
         //works.
     }//GEN-LAST:event_jButton1NextActionPerformed
+
+    private void jButton2GuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2GuessActionPerformed
+        // TODO add your handling code here:
+        Boolean check;
+        check=run.checkGuess(jTextFieldDanish.getText(), jTextFieldEnglish.getText());
+        
+        if(check){
+            System.out.println("du har ret");
+        }
+        
+    }//GEN-LAST:event_jButton2GuessActionPerformed
 
     /**
      * @param args the command line arguments

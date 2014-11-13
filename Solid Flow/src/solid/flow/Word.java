@@ -10,16 +10,24 @@ package solid.flow;
  * @author pellecarlsen
  */
 public class Word {
-    String DanishWord;
-    String EnglishWord;
+    String Question;
+    String Quess;
     
     public Word (String danishWord, String englishWord){
-        this.DanishWord = danishWord;
-        this.EnglishWord = englishWord;
+        this.Question = danishWord;
+        this.Quess = englishWord;
     }
     @Override
     public String toString() {
-        return DanishWord + "," + EnglishWord;
+        return Question + "," + Quess;
+    }
+
+    public String getQuestion() {
+        return Question;
+    }
+
+    public String getEnglishWord() {
+        return Quess;
     }
     
 }
