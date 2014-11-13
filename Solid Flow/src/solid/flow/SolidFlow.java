@@ -5,7 +5,10 @@
  */
 package solid.flow;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -14,18 +17,18 @@ import java.util.ArrayList;
 public class SolidFlow implements WordPairControlInterface{
     ArrayList<Word> word;
     
-    public SolidFlow(){
-        word = new ArrayList<Word>();
+    public SolidFlow(){   
     }
     @Override
     public void add(String question, String answer) {
         Word w = new Word(question,answer);
         word.add(w);
+        System.out.println(word);
     }
 
     @Override
     public int size() {
-        return 0;
+        return word.size();
     }
 
     @Override
@@ -45,7 +48,34 @@ public class SolidFlow implements WordPairControlInterface{
 
     @Override
     public boolean load(String filename) {
-        return true;
+        
+        Scanner file_scanner = null;
+        word = new ArrayList();
+
+        try {
+            file_scanner = new Scanner(new File(filename));  //Connection to the file using the Scanner object
+        } catch (FileNotFoundException ex) {
+            System.out.println("Could not find the file to load from! Returning null.");
+            ex.printStackTrace();
+            return false;  //If something goes wrong the method returns null
+        }
+        while (file_scanner.hasNextLine()) {  //File found. Reading one line. 
+            String linje = file_scanner.nextLine();
+            Scanner sc = new Scanner(linje).useDelimiter(",");
+            String danishWord = sc.next();
+            String englishWord = sc.next();
+            Word w = new Word(danishWord, englishWord);
+            System.out.println(w);
+            word.add(w);  //Reading in a single line and saving in the ArrayList
+        }
+
+        file_scanner.close();  //Closing the file
+        return true;    //returning the arraylist
+        
+
+
+//word = Filehandler.loadWord(filename);
+        
     }
 
     @Override
@@ -57,13 +87,4 @@ public class SolidFlow implements WordPairControlInterface{
     public void clear() {
     }
 
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        
-        // testede at det virker.
-//        ArrayList<Word> wordArray = Filehandler.loadWord("word.txt");
-//        System.out.println(wordArray);
-    }
-    
 }

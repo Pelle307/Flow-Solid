@@ -10,11 +10,13 @@ package solid.flow;
  * @author ejer
  */
 public class GUI extends javax.swing.JFrame {
+    SolidFlow run = new SolidFlow();
 
     /**
      * Creates new form GUI
      */
     public GUI() {
+        run.load("Word.txt");
         initComponents();
     }
 
@@ -54,6 +56,11 @@ public class GUI extends javax.swing.JFrame {
         jButton3LookUp.setText("Look Up");
 
         jButton4New.setText("New");
+        jButton4New.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4NewActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,6 +116,16 @@ public class GUI extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton4NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4NewActionPerformed
+        // TODO add your handling code here:
+        
+        //tests.>>>>>>>>>>>>>>>>>>>>>>>HERE
+        run.add("ko","cow");
+        int size = run.size();
+        System.out.println(size);
+        //>>>>>>>>>>>>>>>>>>>>>>>>> TEST ENDS!
+    }//GEN-LAST:event_jButton4NewActionPerformed
 
     /**
      * @param args the command line arguments
