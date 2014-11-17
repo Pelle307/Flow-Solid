@@ -80,7 +80,6 @@ public class WordPair_Test_v3
         wordPairDemo.add("hest", "horse");      //We trust the add() method here!
         wordPairDemo.add("hus", "house");
         wordPairDemo.add("bord", "table");
-        System.out.println("hej");
     }
 
     @After

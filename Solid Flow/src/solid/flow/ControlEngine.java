@@ -17,9 +17,10 @@ import java.util.Scanner;
  */
 public class ControlEngine implements WordPairControlInterface {
 
-    ArrayList<Word> word;
+    private ArrayList<Word> word;
 
     public ControlEngine() {
+        word = new ArrayList<Word>();
     }
 
     @Override
@@ -88,6 +89,8 @@ public class ControlEngine implements WordPairControlInterface {
 
     @Override
     public void clear() {
+        word.clear();
+        System.out.println(word);
     }
 
 }

@@ -145,7 +145,8 @@ public class GUI extends javax.swing.JFrame {
     private void jButton1NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1NextActionPerformed
         // TODO add your handling code here:
         //testing save method.
-        run.save("Word.txt");
+        run.clear();
+        System.out.println(run.size());
         //works.
     }//GEN-LAST:event_jButton1NextActionPerformed
 
