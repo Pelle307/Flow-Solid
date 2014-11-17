@@ -10,7 +10,7 @@ package solid.flow;
  * @author ejer
  */
 public class GUI extends javax.swing.JFrame {
-    SolidFlow run = new SolidFlow();
+    ControlEngine run = new ControlEngine();
 
     /**
      * Creates new form GUI
@@ -153,7 +153,6 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         Boolean check;
         check=run.checkGuess(jTextFieldDanish.getText(), jTextFieldEnglish.getText());
-        
         if(check){
             System.out.println("du har ret");
         }

@@ -1,7 +1,0 @@
-hest,horse
-ged,goat
-ko,cow
-ko,cow
-ko,cow
-ko,cow
-ko,cow

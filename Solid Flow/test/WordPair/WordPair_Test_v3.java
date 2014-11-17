@@ -22,7 +22,8 @@ package WordPair;
  * Added code to make this test run on a unix like filesystem
  */
 
-import Interface.WordPairControlInterface;
+//import Interface.WordPairControlInterface;
+import java.util.ArrayList;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
@@ -79,6 +80,7 @@ public class WordPair_Test_v3
         wordPairDemo.add("hest", "horse");      //We trust the add() method here!
         wordPairDemo.add("hus", "house");
         wordPairDemo.add("bord", "table");
+        System.out.println("hej");
     }
 
     @After
