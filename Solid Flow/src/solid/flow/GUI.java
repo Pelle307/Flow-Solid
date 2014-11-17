@@ -18,6 +18,7 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         run.load("Word.txt");
         initComponents();
+        jTextFieldDanish.setText(run.getRandomQuestion());
     }
 
     /**
@@ -37,6 +38,7 @@ public class GUI extends javax.swing.JFrame {
         jButton3LookUp = new javax.swing.JButton();
         jButton4New = new javax.swing.JButton();
         jLabel2Correct = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +66,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jButton3LookUp.setText("Look Up");
+        jButton3LookUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3LookUpActionPerformed(evt);
+            }
+        });
 
         jButton4New.setText("New");
         jButton4New.addActionListener(new java.awt.event.ActionListener() {
@@ -83,10 +90,12 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jLabel2Correct, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton4New)
-                            .addComponent(jTextFieldDanish, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                            .addComponent(jTextFieldEnglish))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButton4New)
+                                .addComponent(jTextFieldDanish, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                .addComponent(jTextFieldEnglish)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3LookUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -115,7 +124,9 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3LookUp)
                     .addComponent(jButton4New))
-                .addGap(38, 38, 38)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2Correct, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -139,15 +150,15 @@ public class GUI extends javax.swing.JFrame {
         System.out.println(size);
         jTextFieldDanish.setText("");
         jTextFieldEnglish.setText("");
+        jLabel1.setText("Your word has been saved!");
         //>>>>>>>>>>>>>>>>>>>>>>>>> TEST ENDS!
     }//GEN-LAST:event_jButton4NewActionPerformed
 
     private void jButton1NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1NextActionPerformed
         // TODO add your handling code here:
-        //testing save method.
-        run.clear();
-        System.out.println(run.size());
-        //works.
+    jTextFieldDanish.setText(run.getRandomQuestion());
+    jTextFieldEnglish.setText("");
+    jLabel1.setText("");
     }//GEN-LAST:event_jButton1NextActionPerformed
 
     private void jButton2GuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2GuessActionPerformed
@@ -155,10 +166,16 @@ public class GUI extends javax.swing.JFrame {
         Boolean check;
         check=run.checkGuess(jTextFieldDanish.getText(), jTextFieldEnglish.getText());
         if(check){
-            System.out.println("du har ret");
-        }
+            jLabel1.setText("The answer is correct!");
+        }else
+            jLabel1.setText("The answer is wrong!");
         
     }//GEN-LAST:event_jButton2GuessActionPerformed
+
+    private void jButton3LookUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3LookUpActionPerformed
+        // TODO add your handling code here:
+        jLabel1.setText("The answer is: " + run.lookup(jTextFieldDanish.getText()));
+    }//GEN-LAST:event_jButton3LookUpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,6 +217,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton2Guess;
     private javax.swing.JButton jButton3LookUp;
     private javax.swing.JButton jButton4New;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel1Translator;
     private javax.swing.JLabel jLabel2Correct;
     private javax.swing.JTextField jTextFieldDanish;

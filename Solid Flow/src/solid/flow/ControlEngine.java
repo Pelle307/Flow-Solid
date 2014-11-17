@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -27,7 +28,6 @@ public class ControlEngine implements WordPairControlInterface {
     public void add(String question, String answer) {
         Word w = new Word(question, answer);
         word.add(w);
-        System.out.println(word);
     }
 
     @Override
@@ -37,7 +37,10 @@ public class ControlEngine implements WordPairControlInterface {
 
     @Override
     public String getRandomQuestion() {
-        return null;
+        Random random = new Random();
+        int randomNumber = random.nextInt(word.size());
+        String question = word.get(randomNumber).getQuestion()+"";
+        return question;
     }
 
     @Override
@@ -90,7 +93,6 @@ public class ControlEngine implements WordPairControlInterface {
     @Override
     public void clear() {
         word.clear();
-        System.out.println(word);
     }
 
 }
