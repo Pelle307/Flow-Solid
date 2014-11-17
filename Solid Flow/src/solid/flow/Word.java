@@ -26,8 +26,9 @@ public class Word {
         return Question;
     }
 
-    public String getEnglishWord() {
+    public String getQuess() {
         return Quess;
     }
+
     
 }

@@ -44,7 +44,7 @@ public class ControlEngine implements WordPairControlInterface {
         Boolean check = false;
         for (int i = 0; i < word.size(); i++) {
             if (question.equals(word.get(i).getQuestion())) {
-                if (quess.equals(word.get(i).getEnglishWord())) {
+                if (quess.equals(word.get(i).getQuess())) {
                     check = true;
                 }
             }
@@ -54,6 +54,13 @@ public class ControlEngine implements WordPairControlInterface {
 
     @Override
     public String lookup(String question) {
+        for (int i = 0; i < word.size(); i++) {
+            if (question.equals(word.get(i).getQuestion())) {
+                String answer = word.get(i).getQuess();
+                return answer;
+            }
+
+        }
         return null;
     }
 
