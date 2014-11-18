@@ -15,14 +15,17 @@ import java.util.Random;
 public class ControlEngine implements WordPairControlInterface {
 
     private ArrayList<WordPair> word;
+    int previousQuestion;
+    
 
     public ControlEngine() {
         word = new ArrayList<WordPair>();
+        int previousQuestion = 0;
     }
 
     @Override
     public void add(String question, String answer) {
-        WordPair w = new WordPair(question, answer);
+        WordPair w = new WordPair(question, answer,1);
         word.add(w);
     }
 
@@ -33,62 +36,82 @@ public class ControlEngine implements WordPairControlInterface {
 
     @Override
     public String getRandomQuestion() {
-        Random random = new Random();
-        int randomNumber = random.nextInt(word.size());
-        String question = word.get(randomNumber).getQuestion()+"";
+        int randomQuestion;
+        int randomGenerator = 0;
+        do {
+            randomQuestion = RandomQuestion.roll(word.size());
+           if(randomQuestion == previousQuestion)
+               randomQuestion = RandomQuestion.roll(word.size());
+        } while (randomGenerator!=1);
+        String question = word.get(randomQuestion).getQuestion() + "";
+        previousQuestion = randomQuestion;
         return question;
     }
 
-    @Override
-    public boolean checkGuess(String question, String quess) {
+        @Override
+        public boolean checkGuess
+        (String question, String quess
+        
+            ) {
         Boolean check = false;
-        for (int i = 0; i < word.size(); i++) {
-            if (question.equalsIgnoreCase(word.get(i).getQuestion())) {
-                if (quess.equalsIgnoreCase(word.get(i).getQuess())) {
-                    check = true;
+            for (int i = 0; i < word.size(); i++) {
+                if (question.equalsIgnoreCase(word.get(i).getQuestion())) {
+                    if (quess.equalsIgnoreCase(word.get(i).getQuess())) {
+                        check = true;
+                    }
                 }
             }
+            return check;
         }
-        return check;
-    }
 
-    @Override
-    public String lookup(String question) {
+        @Override
+        public String lookup
+        (String question
+        
+            ) {
         for (int i = 0; i < word.size(); i++) {
-            if (question.equals(word.get(i).getQuestion())) {
-                String answer = word.get(i).getQuess();
-                return answer;
+                if (question.equals(word.get(i).getQuestion())) {
+                    String answer = word.get(i).getQuess();
+                    return answer;
+                }
+
+            }
+            return null;
+        }
+
+        @Override
+        public boolean load
+        (String filename
+        
+            ) {
+        if (Filehandler.loadWord("Word.txt") != null) {
+                word = Filehandler.loadWord("Word.txt");
+                return true;
+            } else {
+                return false;
+            }
+
+//word = Filehandler.loadWord(filename);
+        }
+
+        @Override
+        public boolean save
+        (String filename
+        
+            ) {
+        if (Filehandler.saveWord(word, "Word.txt") == true) {
+                return true;
+            } else {
+                return false;
             }
 
         }
-        return null;
-    }
 
-    @Override
-    public boolean load(String filename) {
-        if (Filehandler.loadWord("Word.txt") != null) {
-            word = Filehandler.loadWord("Word.txt");
-            return true;
-        } else {
-            return false;
-        }
-
-//word = Filehandler.loadWord(filename);
-    }
-
-    @Override
-    public boolean save(String filename) {
-        if (Filehandler.saveWord(word, "Word.txt") == true) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    @Override
-    public void clear() {
+        @Override
+        public void clear
+        
+            () {
         word.clear();
-    }
+        }
 
-}
+    }

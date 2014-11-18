@@ -44,7 +44,8 @@ public class Filehandler {
             Scanner sc = new Scanner(linje).useDelimiter(",");
             String danishWord = sc.next();
             String englishWord = sc.next();
-            WordPair w = new WordPair(danishWord, englishWord);
+            int score = sc.nextInt();
+            WordPair w = new WordPair(danishWord, englishWord,score);
             System.out.println(w);
             wordArray.add(w);  //Reading in a single line and saving in the ArrayList
         }
