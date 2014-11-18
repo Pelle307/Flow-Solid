@@ -1,3 +1,4 @@
-hest,horse
-hus,house
-bord,table
+hest,horse,1
+hus,house,1
+bord,table,1
+mus,mouse,1

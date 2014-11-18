@@ -10,17 +10,21 @@ package solid.flow;
  * @author pellecarlsen
  */
 public class WordPair {
+
     String Question;
     String Quess;
-    
-    public WordPair (String danishWord, String englishWord){
+    int score;
+
+    public WordPair(String danishWord, String englishWord, int i) {
         this.Question = danishWord;
         this.Quess = englishWord;
+        this.score = i;
         Quess.equalsIgnoreCase(getQuess());
     }
+
     @Override
     public String toString() {
-        return Question + "," + Quess;
+        return Question + "," + Quess + "," + score;
     }
 
     public String getQuestion() {
@@ -31,5 +35,4 @@ public class WordPair {
         return Quess;
     }
 
-    
 }

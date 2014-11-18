@@ -157,6 +157,7 @@ public class GUI extends javax.swing.JFrame {
         jTextFieldDanish.setText("");
         jTextFieldEnglish.setText("");
         jLabel1.setText("Your word has been saved!");
+        run.save("Word.txt");
         //>>>>>>>>>>>>>>>>>>>>>>>>> TEST ENDS!
     }//GEN-LAST:event_jButton4NewActionPerformed
 

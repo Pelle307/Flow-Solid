@@ -22,7 +22,7 @@ public class ControlEngine implements WordPairControlInterface {
 
     @Override
     public void add(String question, String answer) {
-        WordPair w = new WordPair(question, answer);
+        WordPair w = new WordPair(question, answer,1);
         word.add(w);
     }
 
