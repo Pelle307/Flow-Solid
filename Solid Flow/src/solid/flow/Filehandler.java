@@ -27,10 +27,10 @@ public class Filehandler {
      * If something goes wrong and an exception is raised this method will return null!
      */
     
-    public static ArrayList<Word> loadWord(String filename)
+    public static ArrayList<WordPair> loadWord(String filename)
     {
         Scanner file_scanner = null;
-        ArrayList<Word> wordArray = new ArrayList<Word>();
+        ArrayList<WordPair> wordArray = new ArrayList<WordPair>();
 
         try {
             file_scanner = new Scanner(new File(filename));  //Connection to the file using the Scanner object
@@ -44,7 +44,7 @@ public class Filehandler {
             Scanner sc = new Scanner(linje).useDelimiter(",");
             String danishWord = sc.next();
             String englishWord = sc.next();
-            Word w = new Word(danishWord, englishWord);
+            WordPair w = new WordPair(danishWord, englishWord);
             System.out.println(w);
             wordArray.add(w);  //Reading in a single line and saving in the ArrayList
         }
@@ -64,14 +64,14 @@ public class Filehandler {
      * @return true if everything went well. False if an exception was raised.
      */
        
-    public static boolean saveWord(ArrayList<Word> wordArray, String filename)
+    public static boolean saveWord(ArrayList<WordPair> wordArray, String filename)
     {
         if( wordArray == null ) { return false;  }  //Checking parameter for null.
         FileWriter output;  //Creating reference for filewriter.
         
         try {
                 output = new FileWriter(new File(filename));  //Opening connection to file.
-                for (Word wordline : wordArray) {   //running through the ArrayList.                    
+                for (WordPair wordline : wordArray) {   //running through the ArrayList.                    
                     output.write(wordline.toString() + "\n");  //Each String object is written as a line in file.
             }
 

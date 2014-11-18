@@ -5,12 +5,8 @@
  */
 package solid.flow;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  *
@@ -18,15 +14,15 @@ import java.util.Scanner;
  */
 public class ControlEngine implements WordPairControlInterface {
 
-    private ArrayList<Word> word;
+    private ArrayList<WordPair> word;
 
     public ControlEngine() {
-        word = new ArrayList<Word>();
+        word = new ArrayList<WordPair>();
     }
 
     @Override
     public void add(String question, String answer) {
-        Word w = new Word(question, answer);
+        WordPair w = new WordPair(question, answer);
         word.add(w);
     }
 

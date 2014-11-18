@@ -9,11 +9,11 @@ package solid.flow;
  *
  * @author pellecarlsen
  */
-public class Word {
+public class WordPair {
     String Question;
     String Quess;
     
-    public Word (String danishWord, String englishWord){
+    public WordPair (String danishWord, String englishWord){
         this.Question = danishWord;
         this.Quess = englishWord;
         Quess.equalsIgnoreCase(getQuess());
