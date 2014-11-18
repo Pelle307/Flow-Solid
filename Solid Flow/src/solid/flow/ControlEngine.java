@@ -47,8 +47,8 @@ public class ControlEngine implements WordPairControlInterface {
     public boolean checkGuess(String question, String quess) {
         Boolean check = false;
         for (int i = 0; i < word.size(); i++) {
-            if (question.equals(word.get(i).getQuestion())) {
-                if (quess.equals(word.get(i).getQuess())) {
+            if (question.equalsIgnoreCase(word.get(i).getQuestion())) {
+                if (quess.equalsIgnoreCase(word.get(i).getQuess())) {
                     check = true;
                 }
             }

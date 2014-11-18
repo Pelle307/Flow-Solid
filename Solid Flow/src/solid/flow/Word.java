@@ -16,6 +16,7 @@ public class Word {
     public Word (String danishWord, String englishWord){
         this.Question = danishWord;
         this.Quess = englishWord;
+        Quess.equalsIgnoreCase(getQuess());
     }
     @Override
     public String toString() {

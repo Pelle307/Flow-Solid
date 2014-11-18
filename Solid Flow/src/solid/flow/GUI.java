@@ -51,6 +51,12 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldEnglish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEnglishActionPerformed(evt);
+            }
+        });
+
         jButton1Next.setText("Next");
         jButton1Next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,6 +182,10 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         jLabel1.setText("The answer is: " + run.lookup(jTextFieldDanish.getText()));
     }//GEN-LAST:event_jButton3LookUpActionPerformed
+
+    private void jTextFieldEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEnglishActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEnglishActionPerformed
 
     /**
      * @param args the command line arguments
