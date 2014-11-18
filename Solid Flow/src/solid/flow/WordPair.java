@@ -13,7 +13,7 @@ public class WordPair {
     String Question;
     String Quess;
     
-    public WordPair (String danishWord, String englishWord,int i){
+    public WordPair (String danishWord, String englishWord){
         this.Question = danishWord;
         this.Quess = englishWord;
         Quess.equalsIgnoreCase(getQuess());
