@@ -23,7 +23,6 @@ public class ControlEngine implements WordPairControlInterface {
 
     public ControlEngine() {
         word = new ArrayList<WordPair>();
-        getQuestion = true;
         random = new Random();
         randomNumber = 0;
         question = null;
