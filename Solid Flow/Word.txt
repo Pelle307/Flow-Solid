@@ -1,4 +1,7 @@
 hest,horse,1
 hus,house,1
 bord,table,1
+<<<<<<< HEAD
 Hus,house,1
+=======
+>>>>>>> origin/master
