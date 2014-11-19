@@ -15,11 +15,19 @@ import java.util.Random;
 public class ControlEngine implements WordPairControlInterface {
 
     private ArrayList<WordPair> word;
-    boolean gotQuestion;
+    boolean getQuestion;
+    Random random = new Random();
+    int randomNumber = 0;
+    String question = null;
+    int randomQuestion = 0;
 
     public ControlEngine() {
         word = new ArrayList<WordPair>();
-        gotQuestion = true;
+        getQuestion = true;
+        random = new Random();
+        randomNumber = 0;
+        question = null;
+        randomQuestion = 0;
     }
 
     @Override
@@ -35,29 +43,25 @@ public class ControlEngine implements WordPairControlInterface {
 
     @Override
     public String getRandomQuestion() {
-        gotQuestion = true;
-        Random random = new Random();
-        int randomNumber = 0;
-        String question = null;
-        int randomQuestion = 0;
-        while (gotQuestion) {
+        getQuestion = true;
+        while (getQuestion) {
             randomNumber = random.nextInt(100) + 1;
             randomQuestion = random.nextInt(word.size());
             System.out.println(randomNumber);
             System.out.println(randomQuestion);
             if (randomNumber <= 80 && (word.get(randomQuestion).getScore() == 1)) {
-                gotQuestion = false;
+                getQuestion = false;
             }
             if (randomNumber >= 81 && randomNumber <= 94 && (word.get(randomQuestion).getScore() == 2)) {
-                gotQuestion = false;
+                getQuestion = false;
             }
             if (randomNumber >= 95 && (word.get(randomQuestion).getScore() == 3)) {
-                gotQuestion = false;
+                getQuestion = false;
             }
         }
         question = word.get(randomQuestion).getQuestion() + "";
-        
-            int isAll3 = 0;
+
+        int isAll3 = 0;
         for (WordPair word1 : word) {
             if (word1.getScore() == 3) {
                 isAll3 += 1;
