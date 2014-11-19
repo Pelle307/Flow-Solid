@@ -10,15 +10,15 @@ package solid.flow;
  * @author ejer
  */
 public class GUI extends javax.swing.JFrame {
-    ControlEngine run = new ControlEngine();
+    ControlEngine control = new ControlEngine();
 
     /**
      * Creates new form GUI
      */
     public GUI() {
-        run.load("Word.txt");
+        control.load("Word.txt");
         initComponents();
-        jTextFieldDanish.setText(run.getRandomQuestion());
+        jTextFieldDanish.setText(control.getRandomQuestion());
     }
 
     /**
@@ -151,19 +151,19 @@ public class GUI extends javax.swing.JFrame {
         danish = jTextFieldDanish.getText();
         english = jTextFieldEnglish.getText();
         //tests.>>>>>>>>>>>>>>>>>>>>>>>HERE
-        run.add(danish,english);
-        int size = run.size();
+        control.add(danish,english);
+        int size = control.size();
         System.out.println(size);
         jTextFieldDanish.setText("");
         jTextFieldEnglish.setText("");
         jLabel1.setText("Your word has been saved!");
-        run.save("Word.txt");
+        control.save("Word.txt");
         //>>>>>>>>>>>>>>>>>>>>>>>>> TEST ENDS!
     }//GEN-LAST:event_jButton4NewActionPerformed
 
     private void jButton1NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1NextActionPerformed
         // TODO add your handling code here:
-    jTextFieldDanish.setText(run.getRandomQuestion());
+    jTextFieldDanish.setText(control.getRandomQuestion());
     jTextFieldEnglish.setText("");
     jLabel1.setText("");
     }//GEN-LAST:event_jButton1NextActionPerformed
@@ -171,7 +171,7 @@ public class GUI extends javax.swing.JFrame {
     private void jButton2GuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2GuessActionPerformed
         // TODO add your handling code here:
         Boolean check;
-        check=run.checkGuess(jTextFieldDanish.getText(), jTextFieldEnglish.getText());
+        check=control.checkGuess(jTextFieldDanish.getText(), jTextFieldEnglish.getText());
         if(check){
             jLabel1.setText("The answer is correct!");
         }else
@@ -181,7 +181,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButton3LookUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3LookUpActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("The answer is: " + run.lookup(jTextFieldDanish.getText()));
+        jLabel1.setText("The answer is: " + control.lookup(jTextFieldDanish.getText()));
     }//GEN-LAST:event_jButton3LookUpActionPerformed
 
     private void jTextFieldEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEnglishActionPerformed

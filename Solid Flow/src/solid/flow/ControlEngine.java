@@ -47,8 +47,6 @@ public class ControlEngine implements WordPairControlInterface {
         while (getQuestion) {
             randomNumber = random.nextInt(100) + 1;
             randomQuestion = random.nextInt(word.size());
-            System.out.println(randomNumber);
-            System.out.println(randomQuestion);
             if (randomNumber <= 80 && (word.get(randomQuestion).getScore() == 1)) {
                 getQuestion = false;
             }
