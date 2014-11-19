@@ -76,6 +76,7 @@ public class WordPair_Test_v3
     {
         //REPLACE WordPairDemoV1    WITH YOUR OWN CLASS THAT IMPLEMENTS THE INTERFACE
         wordPairDemo = new ControlEngine(); // !!!!! REPLACE HERE !!!!!
+        wordPairDemo.clear();
         assertTrue(wordPairDemo.size() == 0);
         wordPairDemo.add("hest", "horse");      //We trust the add() method here!
         wordPairDemo.add("hus", "house");
@@ -99,7 +100,6 @@ public class WordPair_Test_v3
     public void testLoad()
     {
         assertTrue(wordPairDemo.save(fileName));
-        wordPairDemo.clear();
         assertTrue(wordPairDemo.load(fileName));
         assertTrue(wordPairDemo.size() == 3);
         assertEquals(wordPairDemo.lookup("hest"), "horse");
