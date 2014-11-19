@@ -1,3 +1,25 @@
 hest,horse,1
 hus,house,1
 bord,table,1
+mus,mouse,1
+rotte,rat,1
+ged,goat,1
+lærer,teacher,1
+kop,cup,1
+hvor,where,1
+æsel,donkey,1
+have,garden,1
+mor,mother,1
+muldyr,mule,1
+løve,lion,1
+plante,plant,1
+træ,tree,1
+kød,meat,1
+kat,cat,1
+hund,dog,1
+hamster,hamster,1
+elefant,elephant,1
+egern,squirrel,1
+fest,party,1
+lys,light,1
+søpølse,sea cucumber,1
