@@ -45,18 +45,18 @@ public class ControlEngine implements WordPairControlInterface {
             if (randomNumber <= 80) {
                 if (word.get(randomQuestion).getScore() == 1) {
                     question = word.get(randomQuestion).getQuestion() + "";
-                    getQuestion = 1;
+                    getQuestion = 0;
                 }
             } else if (randomNumber >= 81 && randomNumber <= 94) {
                 if (word.get(randomQuestion).getScore() == 2) {
                     question = word.get(randomQuestion).getQuestion() + "";
-                    getQuestion = 1;
+                    getQuestion = 0;
 
                 }
             } else if (randomNumber >= 95) {
                 if (word.get(randomQuestion).getScore() == 3) {
                     question = word.get(randomQuestion).getQuestion() + "";
-                    getQuestion = 1;
+                    getQuestion = 0;
                 }
             }
             for (int i = 0; i < word.size(); i++) {
@@ -69,7 +69,7 @@ public class ControlEngine implements WordPairControlInterface {
                     }
                 }
             }
-        } while (getQuestion == 0);
+        } while (getQuestion == 1);
         return question;
     }
 
