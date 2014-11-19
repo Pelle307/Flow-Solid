@@ -15,6 +15,10 @@ public class WordPair {
     String Quess;
     int score;
 
+    public int getScore() {
+        return score;
+    }
+
     public WordPair(String danishWord, String englishWord, int i) {
         this.Question = danishWord;
         this.Quess = englishWord;
@@ -29,6 +33,10 @@ public class WordPair {
 
     public String getQuestion() {
         return Question;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public String getQuess() {
